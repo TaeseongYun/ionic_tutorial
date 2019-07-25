@@ -1,12 +1,12 @@
 import { Component, OnInit } from "@angular/core";
-import { Recipe } from "./recipes.module";
+import { Recipe } from "./recipe.module";
 
 @Component({
   selector: "app-recipes",
-  templateUrl: "./recipes.page.html",
-  styleUrls: ["./recipes.page.scss"]
+  templateUrl: "recipes.page.html",
+  styleUrls: ["recipes.page.scss"]
 })
-export class RecipesPage implements OnInit {
+export class RecipesPage {
   title = "Recipes";
 
   message = "Recipes Component is working!";
@@ -33,6 +33,4 @@ export class RecipesPage implements OnInit {
   ];
 
   constructor() {}
-
-  ngOnInit() {}
 }

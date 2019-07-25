@@ -24,10 +24,3 @@ const routes: Routes = [
   declarations: [RecipesPage]
 })
 export class RecipesPageModule {}
-
-export interface Recipe {
-  id: string;
-  description: string;
-  imageUrl: string;
-  ingredients: string[];
-}
