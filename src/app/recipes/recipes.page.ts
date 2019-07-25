@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { Recipe } from "./recipe.module";
+import { ActionSheetController } from "@ionic/angular";
 
 @Component({
   selector: "app-recipes",
@@ -32,5 +33,22 @@ export class RecipesPage {
     }
   ];
 
-  constructor() {}
+  constructor(public actionSheetController: ActionSheetController) {}
+
+  async presentActionSheet() {
+    const actionSheet = await this.actionSheetController.create({
+      header: "Albums",
+      buttons: [
+        {
+          text: "Delete",
+          role: "destructive",
+          icon: "trash",
+          handler: () => {
+            console.log("You clicked delete!");
+          }
+        }
+      ]
+    });
+    await actionSheet.present();
+  }
 }
